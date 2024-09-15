@@ -53,8 +53,13 @@
 \titlespacing{\subsection}{0pt}{6pt}{3pt}
 \titlespacing{\subsubsection}{0pt}{6pt}{3pt}
 
-%\titleformat*{\chapter}{\ttfamily\fontseries{b}\selectfont\large}
 
+\renewcommand*{\thechapter}{Chapter \arabic{chapter}}
+%\renewcommand*{\thesection}{\Roman{section}}
+\renewcommand*{\thesection}{\arabic{chapter}\Alph{section}}
+\renewcommand*{\thesubsection}{\arabic{chapter}\Alph{section}}
+
+%\titleformat*{\chapter}{\ttfamily\fontseries{b}\selectfont\large}
 \titleformat{\chapter}[block]
 {\fontseries{b}\selectfont\large}{\thechapter { } { } #1}{0.5em}{\fontseries{b}\selectfont\Large}
 
@@ -71,9 +76,9 @@
 
 \titleformat{\section}{\fontseries{b}\selectfont\large}{}{0em}{\thesection { } #1}
 
-\titleformat{\subsection}{\fontseries{b}\selectfont\normalsize}{}{0em}{#1\ \thesection}
+\titleformat{\subsection}{\fontseries{b}\selectfont\normalsize}{}{0em}{#1\  \thesection}
 
-\titleformat{\subsubsection}{\fontseries{b}\selectfont\normalsize}{}{0em}{#1\ \thesection}
+\titleformat{\subsubsection}{\fontseries{b}\selectfont\normalsize}{}{0em}{#1\  \thesection}
 
 
 %\titlespacing{\chapter}{0pt}{\parskip}{-\parskip}
@@ -94,10 +99,13 @@
 
   \input{def}
 
-  \input{content/E1A.tex}
-  \input{content/E1B.tex}
-  \input{content/E2A.tex}
-  \input{content/E2B.tex}
-  \input{content/E2C.tex}
+  \chapter{Vector Spaces}
+  \input{content/E1A}
+  \input{content/E1B}
+
+  \chapter*{Finite Dimensional Vector Spaces}
+  \input{content/E2A}
+  \input{content/E2B}
+  \input{content/E2C}
 
 \end{document}
